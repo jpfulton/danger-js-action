@@ -15,4 +15,5 @@ jobs:
         uses: jpfulton/danger-js-action@main
         with:
           dangerfile: "dangerfile.ts"
+          debug_mode: true
           github_token: ${{ secrets.GITHUB_TOKEN }}
