@@ -2,9 +2,6 @@
 name: "DangerJS Github Action Harness"
 author: "J. Patrick Fulton (jpfulton)"
 description: "Runs DangerJS within a Docker container in a Github Action"
-runs:
-  using: "docker"
-  image: "Dockerfile"
 branding:
   icon: "check-square"
   color: "green"
@@ -15,3 +12,9 @@ inputs:
   github_token:
     description: "The Github token to use for DangerJS"
     required: true
+runs:
+  using: "docker"
+  image: "Dockerfile"
+  args:
+    - ${{ inputs.dangerfile }}
+    - ${{ inputs.github_token }}
