@@ -5,12 +5,13 @@ on:
 
 jobs:
   test:
+    name: "Local Action Test"
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
         uses: actions/checkout@v4
 
-      - name: Run action
+      - name: Run Local Action
         uses: jpfulton/danger-js-action@main
         with:
           dangerfile: "dangerfile.ts"
