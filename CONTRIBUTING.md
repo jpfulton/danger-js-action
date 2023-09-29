@@ -11,6 +11,11 @@ Templates are available for both bug reports and feature requests.
 
 ## Local Development
 
+### Installing Docker
+
+This project uses [Docker](https://www.docker.com/). If you don't have Docker installed,
+you can download it [here](https://docs.docker.com/get-docker/).
+
 ### Getting Started
 
 To get started:
