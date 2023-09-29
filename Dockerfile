@@ -4,7 +4,7 @@ FROM node:18.18.0-slim
 RUN corepack enable && yarn set version stable
 
 # Copy repo files to container and install dependecies
-COPY .yarnrc.yml package.json yarn.lock ./
+COPY .yarnrc.yml package.json yarn.lock /
 RUN yarn install
 
 # Copy entrypoint script to container
