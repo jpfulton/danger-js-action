@@ -25,6 +25,6 @@ if [ -n "${DEBUG_MODE}" ] && [ "${DEBUG_MODE}" = "true" ];
 
     echo "Contents of the container action directory:";
     echo "---";
-    ls -la /github/workspace;
+    ls -la /action/workspace;
     echo "---";
 fi
