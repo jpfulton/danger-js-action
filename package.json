@@ -1,0 +1,8 @@
+{
+  "name": "danger-js-action",
+  "packageManager": "yarn@3.6.3",
+  "devDependencies": {
+    "danger": "^11.3.0",
+    "typescript": "^5.2.2"
+  }
+}
