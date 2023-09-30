@@ -34,7 +34,7 @@ if [ -n "${DANGERFILE}" ];
       then
         echo "Dangerfile is a remote URL.";
         echo "Downloading Dangerfile from remote URL...";
-        
+
         # Download the Dangerfile from the remote URL to the action workspace directory
         # -s: silent, -S: show errors, -L: follow redirects
         curl -sSL "${DANGERFILE}" > "${ACTION_WORKSPACE_DIR}/dangerfile.ts";
@@ -78,9 +78,15 @@ fi
 echo "Running DangerJS...";
 echo "---";
 cd ${ACTION_WORKSPACE_DIR};
-# Run DangerJS using the Dangerfile specified by action inputs
-# in the github workspace directory
+
+# Set the GITHUB_TOKEN environment variable for DangerJS
 export GITHUB_TOKEN=${GITHUB_TOKEN};
+
+# Run DangerJS using the Dangerfile specified by action inputs
+# --verbose: show verbose output
+# --failOnErrors: fail if DangerJS reports errors
+# --newComment: create a new comment on the PR
+# --removePreviousComments: remove previous comments from DangerJS
 yarn danger ci \
   --verbose \
   --failOnErrors \
