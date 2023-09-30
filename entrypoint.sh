@@ -3,7 +3,7 @@
 # Collect arguments from action input variables to local variables
 DANGERFILE="$1";
 DEBUG_MODE="$2";
-GITHUB_TOKEN="$3";
+#GITHUB_TOKEN="$3";
 
 # Set local constants
 ACTION_WORKSPACE_DIR="/action/workspace";
@@ -15,7 +15,6 @@ echo "---";
 if [ -n "${DEBUG_MODE}" ] && [ "${DEBUG_MODE}" = "true" ]; 
   then
     echo "DEBUG_MODE: ${DEBUG_MODE}";
-    echo "GITHUB_TOKEN: ${GITHUB_TOKEN}";
     echo "---";
 fi
 
@@ -81,7 +80,7 @@ echo "---";
 cd ${ACTION_WORKSPACE_DIR};
 
 # Set the GITHUB_TOKEN environment variable for DangerJS
-export GITHUB_TOKEN=${GITHUB_TOKEN};
+# export GITHUB_TOKEN=${GITHUB_TOKEN};
 
 # Run DangerJS using the Dangerfile specified by action inputs
 # --verbose: show verbose output
