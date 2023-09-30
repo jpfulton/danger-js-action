@@ -22,6 +22,13 @@ if [ -n "${DANGERFILE}" ];
   then
     echo "Dangerfile: ${DANGERFILE}";
 
+    # Ensure the dangerfile is a .ts file
+    if [[ "${DANGERFILE}" != *.ts ]]; 
+      then
+        echo "Dangerfile is not a .ts file. Exiting with error...";
+        exit 1;
+    fi
+
     # Determine if the DANGERFILE is a local file or a remote file
     if [[ "${DANGERFILE}" == http* ]]; 
       then
@@ -31,7 +38,7 @@ if [ -n "${DANGERFILE}" ];
         # -s: silent
         # -S: show errors
         # -L: follow redirects
-        curl -sSL "${DANGERFILE}" > "${ACTION_WORKSPACE_DIR}/${DANGERFILE}";
+        curl -sSL "${DANGERFILE}" > "${ACTION_WORKSPACE_DIR}/dangerfile.ts";
 
         # Check if the download was successful
         if [ $? -eq 0 ]; 
@@ -44,7 +51,7 @@ if [ -n "${DANGERFILE}" ];
       else
         echo "Dangerfile is a local file.";
         echo "Copying Dangerfile from local path...";
-        cp "${DANGERFILE}" "${ACTION_WORKSPACE_DIR}/Dangerfile";
+        cp "${DANGERFILE}" "${ACTION_WORKSPACE_DIR}/dangerfile.ts";
     fi
   else
     echo "No dangerfile specified. Exiting with error...";
@@ -74,9 +81,9 @@ echo "---";
 cd ${ACTION_WORKSPACE_DIR};
 # Run DangerJS using the Dangerfile specified by action inputs
 # in the github workspace directory
+export GITHUB_TOKEN=${GITHUB_TOKEN};
 yarn danger ci \
   --verbose \
   --failOnErrors \
   --newComment \
-  --removePreviousComments \
-  --githubToken=${GITHUB_TOKEN};
+  --removePreviousComments;
