@@ -19,8 +19,8 @@ if [ -n "${DEBUG_MODE}" ] && [ "${DEBUG_MODE}" = "true" ];
 fi
 
 # Check if the GITHUB_TOKEN environment variable is set
-# and is not an empty string
-if [ -z "${GITHUB_TOKEN}" ]; 
+# and is not an empty string and is not equal to the literal string '***'
+if [ -z "${GITHUB_TOKEN}" ] || [ "${GITHUB_TOKEN}" = "" ] || [ "${GITHUB_TOKEN}" = "***" ]; 
   then
     echo "GITHUB_TOKEN environment variable is not set. Exiting with error...";
     exit 1;
