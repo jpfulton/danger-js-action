@@ -17,13 +17,15 @@ fi
 
 if [ -n "${DEBUG_MODE}" ] && [ "${DEBUG_MODE}" = "true" ]; 
   then
-    echo "Contents of working directory:";
+    echo "Contents of current working directory:";
+    echo "---";
+    echo "PWD: $(pwd)";
     echo "---";
     ls -la;
     echo "---";
     echo;
 
-    echo "Contents of the container action directory:";
+    echo "Contents of the container action working directory:";
     echo "---";
     ls -la /action/workspace;
     echo "---";
