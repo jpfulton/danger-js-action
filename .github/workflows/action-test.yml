@@ -33,7 +33,7 @@ jobs:
         run: yarn install
 
       - name: Run Local Action
-        uses: jpfulton/danger-js-action@main
+        uses: jpfulton/danger-js-action@test-pr-branch
         with:
           dangerfile: "tests/dangerfile.ts"
           debug_mode: true
