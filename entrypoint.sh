@@ -18,6 +18,14 @@ if [ -n "${DEBUG_MODE}" ] && [ "${DEBUG_MODE}" = "true" ];
     echo "---";
 fi
 
+# Check if the GITHUB_TOKEN environment variable is set
+# and is not an empty string
+if [ -z "${GITHUB_TOKEN}" ]; 
+  then
+    echo "GITHUB_TOKEN environment variable is not set. Exiting with error...";
+    exit 1;
+fi
+
 if [ -n "${DANGERFILE}" ]; 
   then
     echo "Dangerfile: ${DANGERFILE}";
