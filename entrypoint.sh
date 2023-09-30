@@ -15,6 +15,7 @@ echo "---";
 if [ -n "${DEBUG_MODE}" ] && [ "${DEBUG_MODE}" = "true" ]; 
   then
     echo "DEBUG_MODE: ${DEBUG_MODE}";
+    echo "GITHUB_TOKEN: ${GITHUB_TOKEN}";
     echo "---";
 fi
 
