@@ -34,10 +34,9 @@ if [ -n "${DANGERFILE}" ];
       then
         echo "Dangerfile is a remote URL.";
         echo "Downloading Dangerfile from remote URL...";
+        
         # Download the Dangerfile from the remote URL to the action workspace directory
-        # -s: silent
-        # -S: show errors
-        # -L: follow redirects
+        # -s: silent, -S: show errors, -L: follow redirects
         curl -sSL "${DANGERFILE}" > "${ACTION_WORKSPACE_DIR}/dangerfile.ts";
 
         # Check if the download was successful
