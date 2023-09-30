@@ -20,6 +20,18 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
 
+      - name: Set up node
+        uses: actions/setup-node@v3
+        with:
+          node-version: 18.x
+          cache: yarn
+
+      - name: Update Yarn Version
+        run: corepack enable && yarn set version stable
+
+      - name: Install Dependencies
+        run: yarn install
+
       - name: Run Local Action
         uses: jpfulton/danger-js-action@main
         with:
