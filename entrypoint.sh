@@ -42,7 +42,7 @@ if [ -n "$DEBUG_MODE" ] && [ "$DEBUG_MODE" = "true" ];
       -H "Accept: application/vnd.github+json" \
       -H "Authorization: Bearer ${GITHUB_TOKEN}" \
       -H "X-GitHub-Api-Version: 2022-11-28" \
-      https://api.github.com/;
+      https://api.github.com/user;
 
     # Print the OAuth scopes associated with the GITHUB_TOKEN
     # See documentation: https://docs.github.com/en/rest/overview/authenticating-to-the-rest-api?apiVersion=2022-11-28
