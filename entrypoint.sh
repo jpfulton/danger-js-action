@@ -46,13 +46,13 @@ if [ -n "$DEBUG_MODE" ] && [ "$DEBUG_MODE" = "true" ];
 
     # Print the OAuth scopes associated with the GITHUB_TOKEN
     # See documentation: https://docs.github.com/en/rest/overview/authenticating-to-the-rest-api?apiVersion=2022-11-28
-    echo "OAuth scopes associated with GITHUB_TOKEN:";
-    curl -sSL \
-      -H "Authorization: token ${GITHUB_TOKEN}" \
-      -H "X-GitHub-Api-Version: 2022-11-28" \
-      https://api.github.com/ | \
-      jq -r '.scopes | .[]';
-    echo "---";
+    #echo "OAuth scopes associated with GITHUB_TOKEN:";
+    #curl -sSL \
+    #  -H "Authorization: token ${GITHUB_TOKEN}" \
+    #  -H "X-GitHub-Api-Version: 2022-11-28" \
+    #  https://api.github.com/ | \
+    #  jq -r '.scopes | .[]';
+    #echo "---";
 fi
 
 if [ -n "${DANGERFILE}" ]; 
