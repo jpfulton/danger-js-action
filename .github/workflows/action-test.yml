@@ -34,8 +34,9 @@ jobs:
 
       - name: Run Local Action
         uses: jpfulton/danger-js-action@main
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        #env:
+        #  GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
           dangerfile: "tests/dangerfile.ts"
           debug_mode: true
+          token: ${{ secrets.GITHUB_TOKEN }}

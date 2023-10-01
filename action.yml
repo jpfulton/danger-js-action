@@ -13,9 +13,13 @@ inputs:
     description: "Whether to run action in debug mode"
     required: false
     default: "false"
+  token:
+    description: "Github token"
+    required: true
 runs:
   using: "docker"
   image: "Dockerfile"
   args:
     - ${{ inputs.dangerfile }}
     - ${{ inputs.debug_mode }}
+    - ${{ inputs.token }}

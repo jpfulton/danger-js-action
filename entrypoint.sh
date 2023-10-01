@@ -3,7 +3,7 @@
 # Collect arguments from action input variables to local variables
 DANGERFILE="$1";
 DEBUG_MODE="$2";
-#GITHUB_TOKEN="$3";
+GITHUB_TOKEN="$3";
 
 # Set local constants
 ACTION_WORKSPACE_DIR="/action/workspace";
@@ -24,6 +24,35 @@ if [ -z "${GITHUB_TOKEN}" ] || [ "${GITHUB_TOKEN}" = "" ] || [ "${GITHUB_TOKEN}"
   then
     echo "GITHUB_TOKEN environment variable is not set. Exiting with error...";
     exit 1;
+fi
+
+# Check the validity of the GITHUB_TOKEN that has been passed in
+# by running a simple curl command to the GitHub API and printing the OAuth
+# scopes that are associated with the token, if we are in debug_mode
+if [ -n "$DEBUG_MODE" ] && [ "$DEBUG_MODE" = "true" ]; 
+  then
+    echo "Checking validity of GITHUB_TOKEN...";
+    echo "---";
+
+    # Print the response headers from the GitHub API
+    # Show the repsonse headers and the response body
+    # -i: show response headers, -s: silent
+    curl \
+      -si \
+      -H "Accept: application/vnd.github+json" \
+      -H "Authorization: token ${GITHUB_TOKEN}" \
+      -H "X-GitHub-Api-Version: 2022-11-28" \
+      https://api.github.com/;
+
+    # Print the OAuth scopes associated with the GITHUB_TOKEN
+    # See documentation: https://docs.github.com/en/rest/overview/authenticating-to-the-rest-api?apiVersion=2022-11-28
+    #echo "OAuth scopes associated with GITHUB_TOKEN:";
+    #curl -sSL \
+    #  -H "Authorization: token ${GITHUB_TOKEN}" \
+    #  -H "X-GitHub-Api-Version: 2022-11-28" \
+    #  https://api.github.com/ | \
+    #  jq -r '.scopes | .[]';
+    #echo "---";
 fi
 
 if [ -n "${DANGERFILE}" ]; 
