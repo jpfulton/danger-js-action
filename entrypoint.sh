@@ -3,7 +3,7 @@
 # Collect arguments from action input variables to local variables
 DANGERFILE="$1";
 DEBUG_MODE="$2";
-#GITHUB_TOKEN="$3";
+GITHUB_TOKEN="$3";
 
 # Set local constants
 ACTION_WORKSPACE_DIR="/action/workspace";
