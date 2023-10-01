@@ -26,6 +26,17 @@ if [ -z "${GITHUB_TOKEN}" ] || [ "${GITHUB_TOKEN}" = "" ] || [ "${GITHUB_TOKEN}"
     exit 1;
 fi
 
+# Check the validity of the GITHUB_TOKEN that has been passed in
+# by running a simple curl command to the GitHub API and printing the OAuth
+# scopes that are associated with the token, if we are in debug_mode
+if [ -n "$DEBUG_MODE" ] && [ "$DEBUG_MODE" = "true" ]; 
+  then
+    echo "Checking validity of GITHUB_TOKEN...";
+    echo "---";
+    curl -sSL -H "Authorization: token ${GITHUB_TOKEN}" https://api.github.com | jq -r '.scopes | .[]';
+    echo "---";
+fi
+
 if [ -n "${DANGERFILE}" ]; 
   then
     echo "Dangerfile: ${DANGERFILE}";
