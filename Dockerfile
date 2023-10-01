@@ -3,8 +3,8 @@ FROM node:18.18.0-slim
 # Install modern yarn
 RUN corepack enable && yarn set version stable
 
-# Install curl
-RUN apt-get update && apt-get install -y curl
+# Install curl and jq
+RUN apt-get update && apt-get install -y curl jq
 
 # Copy repo files to container and install dependencies
 WORKDIR /action/workspace
