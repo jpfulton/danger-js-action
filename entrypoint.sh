@@ -119,13 +119,15 @@ cd ${ACTION_WORKSPACE_DIR};
 # Set the GITHUB_TOKEN environment variable for DangerJS
 # export GITHUB_TOKEN=${GITHUB_TOKEN};
 
-export DANGER_GITHUB_API_TOKEN="${GITHUB_TOKEN}";
+#export DANGER_GITHUB_API_TOKEN="${GITHUB_TOKEN}";
 
 # Run DangerJS using the Dangerfile specified by action inputs
 # --verbose: show verbose output
 # --failOnErrors: fail if DangerJS reports errors
 # --newComment: create a new comment on the PR
 # --removePreviousComments: remove previous comments from DangerJS
+DEBUG="*" \
+DANGER_GITHUB_API_TOKEN="${GITHUB_TOKEN}" \
 yarn danger ci \
   --verbose \
   --failOnErrors \
