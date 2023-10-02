@@ -88,8 +88,9 @@ echo "---";
 cd ${GITHUB_WORKSPACE_DIR};
 
 # Run DangerJS
-if [ -n "${DEBUG_MODE} "] && [ "${DEBUG_MODE}" = "true" ];
+if [ -n "${DEBUG_MODE}" ] && [ "${DEBUG_MODE}" = "true" ];
   then
+    echo "Running DangerJS in DEBUG mode...";
     # Set the DEBUG environment variable to * to show all debug output
     # Use the --verbose flag to show verbose output
     DEBUG="*" \
