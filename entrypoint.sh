@@ -98,11 +98,13 @@ if [ -n "${DEBUG_MODE}" ] && [ "${DEBUG_MODE}" = "true" ];
     danger ci \
       --verbose \
       --failOnErrors \
-      --useGithubChecks;
+      --useGithubChecks \
+      --dangerfile ${ACTION_WORKSPACE_DIR}/dangerfile.ts;
   else
     # Run without DangerJS DEBUG output and without verbose output flag
     GITHUB_TOKEN=$GITHUB_TOKEN \
     danger ci \
       --failOnErrors \
-      --useGithubChecks;
+      --useGithubChecks \
+      --dangerfile ${ACTION_WORKSPACE_DIR}/dangerfile.ts;
 fi
