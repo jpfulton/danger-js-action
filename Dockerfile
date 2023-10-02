@@ -17,4 +17,5 @@ RUN yarn install
 # Copy entrypoint script to container
 COPY entrypoint.sh /action/workspace/entrypoint.sh
 
-ENTRYPOINT [ "bash", "/action/workspace/entrypoint.sh", "$GITHUB_TOKEN" ]
+#ENTRYPOINT [ "bash", "/action/workspace/entrypoint.sh", "$GITHUB_TOKEN" ]
+ENTRYPOINT /action/workspace/entrypoint.sh "$GITHUB_TOKEN"
