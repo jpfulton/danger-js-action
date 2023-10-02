@@ -130,7 +130,7 @@ cd ${ACTION_WORKSPACE_DIR};
 # --newComment: create a new comment on the PR
 # --removePreviousComments: remove previous comments from DangerJS
 DEBUG="*" \
-DANGER_GITHUB_API_TOKEN="${GITHUB_TOKEN}" \
+GITHUB_TOKEN=$GITHUB_TOKEN \
 yarn danger ci \
   --verbose \
   --failOnErrors \
