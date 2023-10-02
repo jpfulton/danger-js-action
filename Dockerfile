@@ -1,6 +1,7 @@
 FROM node:18.18.0-slim
 
 ARG GITHUB_TOKEN
+ENV GITHUB_TOKEN=$GITHUB_TOKEN
 
 # Install modern yarn
 RUN corepack enable && yarn set version stable
