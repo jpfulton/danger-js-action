@@ -40,5 +40,5 @@ jobs:
         with:
           dangerfile: "tests/dangerfile.ts"
           debug_mode: true
-          #token: ${{ secrets.GITHUB_TOKEN }}
-          token: ${{ github.token }}
+          token: ${{ secrets.GITHUB_TOKEN }}
+          #token: ${{ github.token }}

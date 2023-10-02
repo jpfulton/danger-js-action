@@ -1,12 +1,12 @@
 #!/bin/bash
 
-echo "First argument: $1";
-GITHUB_TOKEN="$1";
+#echo "First argument: $1";
+#GITHUB_TOKEN="$1";
 
 # Collect arguments from action input variables to local variables
 DANGERFILE="$2";
 DEBUG_MODE="$3";
-#GITHUB_TOKEN="$4";
+GITHUB_TOKEN="$4";
 
 # Set local constants
 ACTION_WORKSPACE_DIR="/action/workspace";
@@ -115,9 +115,9 @@ if [ -n "${DEBUG_MODE}" ] && [ "${DEBUG_MODE}" = "true" ];
     echo "---";
 fi
 
-#echo "Running DangerJS...";
-#echo "---";
-#cd ${ACTION_WORKSPACE_DIR};
+echo "Running DangerJS...";
+echo "---";
+cd ${ACTION_WORKSPACE_DIR};
 
 # Set the GITHUB_TOKEN environment variable for DangerJS
 # export GITHUB_TOKEN=${GITHUB_TOKEN};
@@ -129,10 +129,8 @@ fi
 # --failOnErrors: fail if DangerJS reports errors
 # --newComment: create a new comment on the PR
 # --removePreviousComments: remove previous comments from DangerJS
-#DEBUG="*" \
-#GITHUB_TOKEN=$GITHUB_TOKEN \
-#yarn danger ci \
-#  --verbose \
-#  --failOnErrors \
-#  --newComment \
-#  --removePreviousComments;
+DEBUG="*" \
+GITHUB_TOKEN=$GITHUB_TOKEN \
+yarn danger ci \
+  --verbose \
+  --failOnErrors;
