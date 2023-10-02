@@ -40,4 +40,4 @@ COPY --from=build /action/workspace/node_modules ./node_modules
 #RUN ln -s /usr/src/danger/dist/commands/danger.js /usr/bin/danger
 RUN ln -s /usr/src/danger/node_modules/.bin/danger /usr/bin/danger
 
-ENTRYPOINT ["danger", "ci", "--verbose", "--fail-on-errors", "--newComment"]
+ENTRYPOINT ["danger", "ci", "--verbose", "--fail-on-errors"]
