@@ -85,7 +85,7 @@ fi
 
 echo "Running DangerJS...";
 echo "---";
-cd ${ACTION_WORKSPACE_DIR};
+cd ${GITHUB_WORKSPACE_DIR};
 
 # Run DangerJS
 if [ -n "${DEBUG_MODE} "] && [ "${DEBUG_MODE}" = "true" ];
@@ -94,14 +94,14 @@ if [ -n "${DEBUG_MODE} "] && [ "${DEBUG_MODE}" = "true" ];
     # Use the --verbose flag to show verbose output
     DEBUG="*" \
     GITHUB_TOKEN=$GITHUB_TOKEN \
-    yarn danger ci \
+    danger ci \
       --verbose \
       --failOnErrors \
       --useGithubChecks;
   else
     # Run without DangerJS DEBUG output and without verbose output flag
     GITHUB_TOKEN=$GITHUB_TOKEN \
-    yarn danger ci \
+    danger ci \
       --failOnErrors \
       --useGithubChecks;
 fi
