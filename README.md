@@ -20,3 +20,25 @@ over HTTP or HTTPS. This implementation expects the Dangerfile to be implemented
 | `github_token` | The GitHub token to use to authenticate with the GitHub API. | Yes | - |
 
 Further details on the inputs can be found in the [action.yml](action.yml) file.
+
+## Usage in a GitHub Actions Workflow
+
+The job under which the action is run must have the following permissions:
+
+```yaml
+permissions:
+  checks: write
+  pull-requests: write
+  issues: write
+```
+
+The following example shows how to use the action in a GitHub Actions workflow:
+
+```yaml
+  - name: Run Local Action
+    uses: jpfulton/danger-js-action@main
+    with:
+      dangerfile: "tests/dangerfile.ts"
+      debug_mode: true
+      token: ${{ secrets.GITHUB_TOKEN }}
+```
