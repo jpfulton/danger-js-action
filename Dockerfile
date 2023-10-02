@@ -1,5 +1,7 @@
 FROM node:18.18.0-slim
 
+ARG GITHUB_TOKEN
+
 # Install modern yarn
 RUN corepack enable && yarn set version stable
 
@@ -14,4 +16,4 @@ RUN yarn install
 # Copy entrypoint script to container
 COPY entrypoint.sh /action/workspace/entrypoint.sh
 
-ENTRYPOINT [ "bash", "/action/workspace/entrypoint.sh" ]
+ENTRYPOINT [ "bash", "/action/workspace/entrypoint.sh", ${GITHUB_TOKEN} ]

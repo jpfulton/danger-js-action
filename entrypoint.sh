@@ -1,5 +1,7 @@
 #!/bin/bash
 
+echo $1;
+
 # Collect arguments from action input variables to local variables
 DANGERFILE="$1";
 DEBUG_MODE="$2";
