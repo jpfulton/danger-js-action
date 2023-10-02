@@ -115,9 +115,9 @@ if [ -n "${DEBUG_MODE}" ] && [ "${DEBUG_MODE}" = "true" ];
     echo "---";
 fi
 
-echo "Running DangerJS...";
-echo "---";
-cd ${ACTION_WORKSPACE_DIR};
+#echo "Running DangerJS...";
+#echo "---";
+#cd ${ACTION_WORKSPACE_DIR};
 
 # Set the GITHUB_TOKEN environment variable for DangerJS
 # export GITHUB_TOKEN=${GITHUB_TOKEN};
@@ -129,10 +129,10 @@ cd ${ACTION_WORKSPACE_DIR};
 # --failOnErrors: fail if DangerJS reports errors
 # --newComment: create a new comment on the PR
 # --removePreviousComments: remove previous comments from DangerJS
-DEBUG="*" \
-GITHUB_TOKEN=$GITHUB_TOKEN \
-yarn danger ci \
-  --verbose \
-  --failOnErrors \
-  --newComment \
-  --removePreviousComments;
+#DEBUG="*" \
+#GITHUB_TOKEN=$GITHUB_TOKEN \
+#yarn danger ci \
+#  --verbose \
+#  --failOnErrors \
+#  --newComment \
+#  --removePreviousComments;
