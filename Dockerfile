@@ -19,7 +19,7 @@ COPY entrypoint.sh /action/workspace/entrypoint.sh
 RUN chmod +x /action/workspace/entrypoint.sh
 #RUN bash -c "exec /action/workspace/entrypoint.sh \"$GITHUB_TOKEN\" \"${@}\" --"
 
-ENTRYPOINT [ "bash", "/action/workspace/entrypoint.sh", "$GITHUB_TOKEN" ]
+ENTRYPOINT [ "bash", "/action/workspace/entrypoint.sh"]
 #ENTRYPOINT /action/workspace/entrypoint.sh "$GITHUB_TOKEN"
 #ENTRYPOINT ["bash", "-c", "exec /action/workspace/entrypoint.sh \"$GITHUB_TOKEN\" \"${@}\"", "--"]
 
