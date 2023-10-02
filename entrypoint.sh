@@ -1,11 +1,12 @@
 #!/bin/bash
 
 echo "First argument: $1";
+GITHUB_TOKEN="$1";
 
 # Collect arguments from action input variables to local variables
 DANGERFILE="$2";
 DEBUG_MODE="$3";
-GITHUB_TOKEN="$4";
+#GITHUB_TOKEN="$4";
 
 # Set local constants
 ACTION_WORKSPACE_DIR="/action/workspace";
