@@ -24,6 +24,12 @@ RUN chmod +x /action/workspace/entrypoint.sh
 #ENTRYPOINT ["bash", "-c", "exec /action/workspace/entrypoint.sh \"$GITHUB_TOKEN\" \"${@}\"", "--"]
 
 FROM node:18.18.0-slim
+
+LABEL "com.github.actions.name"="danger-js-action"
+LABEL "com.github.actions.description"="Runs DangerJS with a plugin collection on PR checks."
+LABEL "com.github.actions.icon"="check-square"
+LABEL "com.github.actions.color"="green"
+
 WORKDIR /usr/src/danger
 ENV PATH="/usr/src/danger/node_modules/.bin:$PATH"
 #COPY package.json ./
