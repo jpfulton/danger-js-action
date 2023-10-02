@@ -40,9 +40,9 @@ if [ -n "$DEBUG_MODE" ] && [ "$DEBUG_MODE" = "true" ];
     curl \
       -si \
       -H "Accept: application/vnd.github+json" \
-      -H "Authorization: token ${GITHUB_TOKEN}" \
+      -H "Authorization: Bearer ${GITHUB_TOKEN}" \
       -H "X-GitHub-Api-Version: 2022-11-28" \
-      https://api.github.com/;
+      https://api.github.com/user;
 
     # Print the OAuth scopes associated with the GITHUB_TOKEN
     # See documentation: https://docs.github.com/en/rest/overview/authenticating-to-the-rest-api?apiVersion=2022-11-28
@@ -119,13 +119,15 @@ cd ${ACTION_WORKSPACE_DIR};
 # Set the GITHUB_TOKEN environment variable for DangerJS
 # export GITHUB_TOKEN=${GITHUB_TOKEN};
 
-export DANGER_GITHUB_API_TOKEN="${GITHUB_TOKEN}";
+#export DANGER_GITHUB_API_TOKEN="${GITHUB_TOKEN}";
 
 # Run DangerJS using the Dangerfile specified by action inputs
 # --verbose: show verbose output
 # --failOnErrors: fail if DangerJS reports errors
 # --newComment: create a new comment on the PR
 # --removePreviousComments: remove previous comments from DangerJS
+DEBUG="*" \
+DANGER_GITHUB_API_TOKEN="${GITHUB_TOKEN}" \
 yarn danger ci \
   --verbose \
   --failOnErrors \
