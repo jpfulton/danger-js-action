@@ -19,25 +19,25 @@ COPY entrypoint.sh /action/workspace/entrypoint.sh
 RUN chmod +x /action/workspace/entrypoint.sh
 #RUN bash -c "exec /action/workspace/entrypoint.sh \"$GITHUB_TOKEN\" \"${@}\" --"
 
-#ENTRYPOINT [ "bash", "/action/workspace/entrypoint.sh", "$GITHUB_TOKEN" ]
+ENTRYPOINT [ "bash", "/action/workspace/entrypoint.sh", "$GITHUB_TOKEN" ]
 #ENTRYPOINT /action/workspace/entrypoint.sh "$GITHUB_TOKEN"
 #ENTRYPOINT ["bash", "-c", "exec /action/workspace/entrypoint.sh \"$GITHUB_TOKEN\" \"${@}\"", "--"]
 
-FROM node:18.18.0-slim
+#FROM node:18.18.0-slim
 
-LABEL "com.github.actions.name"="danger-js-action"
-LABEL "com.github.actions.description"="Runs DangerJS with a plugin collection on PR checks."
-LABEL "com.github.actions.icon"="check-square"
-LABEL "com.github.actions.color"="green"
+#LABEL "com.github.actions.name"="danger-js-action"
+#LABEL "com.github.actions.description"="Runs DangerJS with a plugin collection on PR checks."
+#LABEL "com.github.actions.icon"="check-square"
+#LABEL "com.github.actions.color"="green"
 
-WORKDIR /usr/src/danger
-ENV PATH="/usr/src/danger/node_modules/.bin:$PATH"
+#WORKDIR /usr/src/danger
+#ENV PATH="/usr/src/danger/node_modules/.bin:$PATH"
 #COPY package.json ./
 #COPY --from=build /usr/src/danger/distribution ./dist
-COPY --from=build /action/workspace/entrypoint.sh /entrypoint.sh
-COPY --from=build /action/workspace/package.json ./package.json
-COPY --from=build /action/workspace/node_modules ./node_modules
+#COPY --from=build /action/workspace/entrypoint.sh /entrypoint.sh
+#COPY --from=build /action/workspace/package.json ./package.json
+#COPY --from=build /action/workspace/node_modules ./node_modules
 #RUN ln -s /usr/src/danger/dist/commands/danger.js /usr/bin/danger
-RUN ln -s /usr/src/danger/node_modules/.bin/danger /usr/bin/danger
+#RUN ln -s /usr/src/danger/node_modules/.bin/danger /usr/bin/danger
 
-ENTRYPOINT ["danger", "ci", "--verbose", "--fail-on-errors"]
+#ENTRYPOINT ["danger", "ci", "--verbose", "--fail-on-errors"]
