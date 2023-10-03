@@ -36,6 +36,7 @@ jobs:
       - name: Run Local Action
         uses: jpfulton/danger-js-action@main
         with:
-          dangerfile: "tests/dangerfile.ts"
+          #dangerfile: "tests/dangerfile.ts"
+          dangerfile: https://raw.githubusercontent.com/jpfulton/jpfulton-devops-config/main/danger-files/dangerfile-node-project.ts
           debug_mode: true
           token: ${{ secrets.GITHUB_TOKEN }}
