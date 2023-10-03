@@ -1,5 +1,8 @@
 # danger-js-action
 
+![License](https://img.shields.io/badge/License-MIT-blue)
+![Visitors](https://visitor-badge.laobi.icu/badge?page_id=jpfulton.danger-js-action)
+
 A GitHub Action for running [Danger JS](https://danger.systems/js/) against pull requests.
 It will comment inline with the PR and can be configured to fail the build if the Danger run fails.
 It is implemented inside a Docker container to allow DangerJS to be run without adding it as
