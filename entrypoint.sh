@@ -95,6 +95,7 @@ if [ -f "tsconfig.json" ];
   then
     TSCONFIG_FILE_EXISTS=true;
     echo "tsconfig.json file found. Renaming to tsconfig.json.bak...";
+    echo "---";
     mv tsconfig.json tsconfig.json.bak;
 fi
 
@@ -124,6 +125,7 @@ fi
 # then rename it back to tsconfig.json
 if [ -n "${TSCONFIG_FILE_EXISTS}" ] && [ "${TSCONFIG_FILE_EXISTS}" = "true" ]; 
   then
-    echo "tsconfig.json.bak file found. Renaming back to tsconfig.json...";
+    echo "tsconfig.json.bak file found. Renaming back to tsconfig.json to clean up...";
+    echo "---";
     mv tsconfig.json.bak tsconfig.json;
 fi
