@@ -17,7 +17,7 @@ over HTTP or HTTPS. This implementation expects the Dangerfile to be implemented
 ## Action Inputs
 
 | Name | Description | Required | Default |
-| --- | --- | --- |
+| --- | --- | --- | --- |
 | `dangerfile` | The path to the Dangerfile to run. This path may be local to the repository or a remote URL. | Yes | - |
 | `debug_mode` | Whether to run the action in debug mode. | No | `false` |
 | `github_token` | The GitHub token to use to authenticate with the GitHub API. | Yes | - |
