@@ -6,7 +6,7 @@ on:
       - main
     paths:
       - Dockerfile.base
-      - .github/workflows/update-base-image.yml
+      - .github/workflows/base-image.yml
       - package.json
       - yarn.lock
       - entrypoint.sh
