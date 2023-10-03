@@ -12,6 +12,10 @@ on:
       - entrypoint.sh
       - .yarnrc.yml
 
+permissions:
+  contents: read
+  packages: write
+
 jobs:
   release:
     runs-on: ubuntu-latest
