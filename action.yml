@@ -1,7 +1,7 @@
 ---
 name: "DangerJS Github Action Harness"
 author: "J. Patrick Fulton (jpfulton)"
-description: "Runs DangerJS within a Docker container in a Github Action"
+description: "Runs DangerJS within a Docker container in a Github Action with a collection of plugins"
 branding:
   icon: "check-square"
   color: "green"
