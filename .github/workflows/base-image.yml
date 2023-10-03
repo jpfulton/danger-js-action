@@ -3,10 +3,14 @@ on:
   workflow_dispatch:
   push:
     branches:
-      - master
+      - main
     paths:
       - Dockerfile.base
       - .github/workflows/update-base-image.yml
+      - package.json
+      - yarn.lock
+      - entrypoint.sh
+      - .yarnrc.yml
 
 jobs:
   release:
