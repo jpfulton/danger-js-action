@@ -32,7 +32,7 @@ The job under which the action is run must have the following permissions:
 permissions:
   checks: write
   pull-requests: write
-  issues: write
+  statuses: write
 ```
 
 The following example shows how to use the action in a GitHub Actions workflow:
