@@ -87,6 +87,17 @@ echo "Running DangerJS...";
 echo "---";
 cd ${GITHUB_WORKSPACE_DIR};
 
+# if a tsconfig.json file exists at the root of the currrent working directory
+# then temporarily rename it to tsconfig.json.bak
+# this step allows the dangerfile.ts to be transpiles using default tsc options
+# inside the danger-js runtime
+if [ -f "tsconfig.json" ]; 
+  then
+    TSCONFIG_FILE_EXISTS=true;
+    echo "tsconfig.json file found. Renaming to tsconfig.json.bak...";
+    mv tsconfig.json tsconfig.json.bak;
+fi
+
 # Run DangerJS
 if [ -n "${DEBUG_MODE}" ] && [ "${DEBUG_MODE}" = "true" ];
   then
@@ -107,4 +118,12 @@ if [ -n "${DEBUG_MODE}" ] && [ "${DEBUG_MODE}" = "true" ];
       --failOnErrors \
       --useGithubChecks \
       --dangerfile ${ACTION_WORKSPACE_DIR}/dangerfile.ts;
+fi
+
+# if a tsconfig.json.bak file exists at the root of the currrent working directory
+# then rename it back to tsconfig.json
+if [ -n "${TSCONFIG_FILE_EXISTS}" ] && [ "${TSCONFIG_FILE_EXISTS}" = "true" ]; 
+  then
+    echo "tsconfig.json.bak file found. Renaming back to tsconfig.json...";
+    mv tsconfig.json.bak tsconfig.json;
 fi
