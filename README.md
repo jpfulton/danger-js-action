@@ -128,3 +128,24 @@ export default async () => {
 
 Further details on the configuration options can be found in the host repository of the
 [plugin](https://github.com/jpfulton/node-license-auditor-cli).
+
+## The Docker Image and Repository Workflows
+
+The Docker image is split into two parts. The first part is the base image that contains
+the DangerJS package, the TypeScript compiler, associated plugins and NodeJS. The base
+image is built and published by a workflow to the Github Container Registry to accelerate
+the build of the action image in referencing workflows. The second part is the action
+image that is derived from the base image and is referenced by the action. The action
+Dockerfile is used by the [action.yml](./action.yml) file to build and execute the action.
+
+## Contributing
+
+Contributions are welcome. Please see the [contributing](CONTRIBUTING.md) file for details.
+
+## Code of Conduct
+
+Please see the [code of conduct](CODE_OF_CONDUCT.md) file for details.
+
+## Security
+
+Please see the [security](SECURITY.md) file for details.
