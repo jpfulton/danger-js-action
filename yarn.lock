@@ -791,9 +791,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@jpfulton/java-license-auditor-cli@npm:^0.0.2":
-  version: 0.0.2
-  resolution: "@jpfulton/java-license-auditor-cli@npm:0.0.2"
+"@jpfulton/java-license-auditor-cli@npm:^0.0.3":
+  version: 0.0.3
+  resolution: "@jpfulton/java-license-auditor-cli@npm:0.0.3"
   dependencies:
     commander: ^11.0.0
     filedirname: ^2.7.0
@@ -801,7 +801,7 @@ __metadata:
     node-html-parser: ^6.1.10
   bin:
     java-license-auditor-cli: dist/cjs/program.js
-  checksum: 52d1dfa215934a275d010f31b0be427aff823b05943c1597cb04904427e6d4d70ec954a3c2ff2f2526e415358eb15268cdc71696ac8f4b4af8102c1832eb0c26
+  checksum: c0a54baa07e4d130ace6726cc8fc032a1c41b751b8c021903749b846eee8bd619219f92521f5a10bab62c5df3131bd50c0334858f29ec66fb9eac010ced61643
   languageName: node
   linkType: hard
 
@@ -2061,7 +2061,7 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "danger-js-action@workspace:."
   dependencies:
-    "@jpfulton/java-license-auditor-cli": ^0.0.2
+    "@jpfulton/java-license-auditor-cli": ^0.0.3
     "@jpfulton/node-license-auditor-cli": ^1.0.1
     "@seadub/danger-plugin-eslint": ^3.0.2
     "@typescript-eslint/eslint-plugin": ^6.5.0
