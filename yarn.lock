@@ -791,9 +791,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@jpfulton/java-license-auditor-cli@npm:^0.0.4":
-  version: 0.0.4
-  resolution: "@jpfulton/java-license-auditor-cli@npm:0.0.4"
+"@jpfulton/java-license-auditor-cli@npm:^0.0.5":
+  version: 0.0.5
+  resolution: "@jpfulton/java-license-auditor-cli@npm:0.0.5"
   dependencies:
     commander: ^11.0.0
     filedirname: ^2.7.0
@@ -801,13 +801,13 @@ __metadata:
     node-html-parser: ^6.1.10
   bin:
     java-license-auditor-cli: dist/cjs/program.js
-  checksum: b8586acb0351e353d693c76d10ce4ff9a8311d253e2243b81a697b3d6fe12e3469ed6f70f2c977e69920d4e3c86fd1b40fef729131c69a64f3284d7596e42ffd
+  checksum: 84db74ca5c2949179e61b4068d0430729843304a1194fbebb8f728dea9a49b055c7f700b18f59aecad0608db443b997dcc6983c3906cfef3e4d9e3828da71f76
   languageName: node
   linkType: hard
 
-"@jpfulton/node-license-auditor-cli@npm:^1.0.1":
-  version: 1.0.1
-  resolution: "@jpfulton/node-license-auditor-cli@npm:1.0.1"
+"@jpfulton/node-license-auditor-cli@npm:^1.0.2":
+  version: 1.0.2
+  resolution: "@jpfulton/node-license-auditor-cli@npm:1.0.2"
   dependencies:
     bluebird: ^3.7.2
     commander: ^11.0.0
@@ -816,7 +816,7 @@ __metadata:
     node-fetch: 2
   bin:
     node-license-auditor-cli: dist/cjs/program.js
-  checksum: f3ff445d10cf49884743a5ef448269a82b9ad4539b1e00137d47f37d59eab5b3d9af7a5582161eb3013c94c21613fe041e91e651524f40bde802214700ebaea0
+  checksum: 36e30882d60b63905dcb8d392f668b95f877724326dc0083e1ab38b47fa577e7c1d62389d3866d6133f3204c55765e39a47194b060494693ea9e23645e85c11b
   languageName: node
   linkType: hard
 
@@ -2061,8 +2061,8 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "danger-js-action@workspace:."
   dependencies:
-    "@jpfulton/java-license-auditor-cli": ^0.0.4
-    "@jpfulton/node-license-auditor-cli": ^1.0.1
+    "@jpfulton/java-license-auditor-cli": ^0.0.5
+    "@jpfulton/node-license-auditor-cli": ^1.0.2
     "@seadub/danger-plugin-eslint": ^3.0.2
     "@typescript-eslint/eslint-plugin": ^6.5.0
     "@typescript-eslint/parser": ^6.7.4
