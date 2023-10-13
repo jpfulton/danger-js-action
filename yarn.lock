@@ -805,18 +805,27 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@jpfulton/node-license-auditor-cli@npm:^1.0.2":
-  version: 1.0.2
-  resolution: "@jpfulton/node-license-auditor-cli@npm:1.0.2"
+"@jpfulton/license-auditor-common@npm:^0.0.6":
+  version: 0.0.6
+  resolution: "@jpfulton/license-auditor-common@npm:0.0.6"
   dependencies:
+    node-fetch: 2
+  checksum: 02ed896d6a502de50983eede1322acf217e4ff80ffad2376667ff37b56906bdd4f6f001ae40ce5dc52a3e4ee878bc6eeb730563c4aea699ea94c41af8979189f
+  languageName: node
+  linkType: hard
+
+"@jpfulton/node-license-auditor-cli@npm:^1.0.6":
+  version: 1.0.6
+  resolution: "@jpfulton/node-license-auditor-cli@npm:1.0.6"
+  dependencies:
+    "@jpfulton/license-auditor-common": ^0.0.6
     bluebird: ^3.7.2
     commander: ^11.0.0
-    filedirname: ^2.7.0
     lodash: ^4.17.21
     node-fetch: 2
   bin:
     node-license-auditor-cli: dist/cjs/program.js
-  checksum: 36e30882d60b63905dcb8d392f668b95f877724326dc0083e1ab38b47fa577e7c1d62389d3866d6133f3204c55765e39a47194b060494693ea9e23645e85c11b
+  checksum: 8f061538e326a9522311cb2ed675e4fc9c063349e5d94d1c6a9eb22d91956a566205e4496cd7a885ee8597b4bcbb46c583f6fb4d2c4d7b7a6f873fb156c2549e
   languageName: node
   linkType: hard
 
@@ -2062,7 +2071,7 @@ __metadata:
   resolution: "danger-js-action@workspace:."
   dependencies:
     "@jpfulton/java-license-auditor-cli": ^0.0.5
-    "@jpfulton/node-license-auditor-cli": ^1.0.2
+    "@jpfulton/node-license-auditor-cli": ^1.0.6
     "@seadub/danger-plugin-eslint": ^3.0.2
     "@typescript-eslint/eslint-plugin": ^6.5.0
     "@typescript-eslint/parser": ^6.7.4
