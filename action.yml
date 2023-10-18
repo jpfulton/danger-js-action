@@ -16,6 +16,9 @@ inputs:
   token:
     description: "Github token"
     required: true
+  pat_token:
+    description: "Github PAT token used for accessing private repos"
+    required: false
 runs:
   using: "docker"
   image: "Dockerfile"
@@ -23,3 +26,4 @@ runs:
     - ${{ inputs.dangerfile }}
     - ${{ inputs.debug_mode }}
     - ${{ inputs.token }}
+    - ${{ inputs.pat_token }}

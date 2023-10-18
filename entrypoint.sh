@@ -4,6 +4,7 @@
 DANGERFILE="$1";
 DEBUG_MODE="$2";
 GITHUB_TOKEN="$3";
+GITHUB_PAT_TOKEN="$4";
 
 # Set local constants
 ACTION_WORKSPACE_DIR="/action/workspace";
@@ -43,9 +44,23 @@ if [ -n "${DANGERFILE}" ];
         echo "Dangerfile is a remote URL.";
         echo "Downloading Dangerfile from remote URL...";
 
-        # Download the Dangerfile from the remote URL to the action workspace directory
-        # -s: silent, -S: show errors, -L: follow redirects
-        curl -sSL "${DANGERFILE}" > "${ACTION_WORKSPACE_DIR}/dangerfile.ts";
+        if [ -z "${GITHUB_PAT_TOKEN}" ] || [ "${GITHUB_PAT_TOKEN}" = "" ]; 
+          then
+            echo "GITHUB_PAT_TOKEN environment variable is not set. Remote configuration is in a public repo...";
+            
+            # Download the Dangerfile from the remote URL to the action workspace directory
+            # -s: silent, -S: show errors, -L: follow redirects
+            curl -sSL "${DANGERFILE}" > "${ACTION_WORKSPACE_DIR}/dangerfile.ts";
+          else
+            echo "GITHUB_PAT_TOKEN environment variable is set. Remote configuration is in a private repo...";
+
+            # Download the Dangerfile from the remote URL to the action workspace directory
+            # -s: silent, -S: show errors, -L: follow redirects
+            # -H: add a header to the request
+            curl -sSL "${DANGERFILE}" \
+              -H "Authorization: token ${GITHUB_PAT_TOKEN}" \
+              > "${ACTION_WORKSPACE_DIR}/dangerfile.ts";
+        fi
 
         # Check if the download was successful
         if [ $? -eq 0 ]; 
@@ -107,6 +122,7 @@ if [ -n "${DEBUG_MODE}" ] && [ "${DEBUG_MODE}" = "true" ];
     # Use the --verbose flag to show verbose output
     DEBUG="*" \
     GITHUB_TOKEN=$GITHUB_TOKEN \
+    GITHUB_PAT_TOKEN=$GITHUB_PAT_TOKEN \
     danger ci \
       --verbose \
       --failOnErrors \
@@ -115,6 +131,7 @@ if [ -n "${DEBUG_MODE}" ] && [ "${DEBUG_MODE}" = "true" ];
   else
     # Run without DangerJS DEBUG output and without verbose output flag
     GITHUB_TOKEN=$GITHUB_TOKEN \
+    GITHUB_PAT_TOKEN=$GITHUB_PAT_TOKEN \
     danger ci \
       --failOnErrors \
       --useGithubChecks \

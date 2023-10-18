@@ -21,6 +21,7 @@ over HTTP or HTTPS. This implementation expects the Dangerfile to be implemented
 | `dangerfile` | The path to the Dangerfile to run. This path may be local to the repository or a remote URL. | Yes | - |
 | `debug_mode` | Whether to run the action in debug mode. | No | `false` |
 | `github_token` | The GitHub token to use to authenticate with the GitHub API. | Yes | - |
+| `github_pat_token` | The GitHub personal access token to use to authenticate for a remote Dangerfile in a private repo. | No | - |
 
 Further details on the inputs can be found in the [action.yml](action.yml) file.
 
