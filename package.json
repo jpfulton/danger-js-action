@@ -2,7 +2,7 @@
   "name": "danger-js-action",
   "packageManager": "yarn@3.6.3",
   "devDependencies": {
-    "@jpfulton/java-license-auditor-cli": "^0.0.8",
+    "@jpfulton/java-license-auditor-cli": "^0.0.10",
     "@jpfulton/node-license-auditor-cli": "^1.0.7",
     "@seadub/danger-plugin-eslint": "^3.0.2",
     "@typescript-eslint/eslint-plugin": "^6.8.0",
