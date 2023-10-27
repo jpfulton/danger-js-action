@@ -10,7 +10,7 @@ LABEL "com.github.actions.icon"="green-square"
 LABEL "com.github.actions.color"="green"
 
 # Install modern yarn
-RUN corepack enable && yarn set version stable
+RUN corepack enable && yarn set version 3.6.3
 
 # Install curl
 RUN apt-get update && apt-get install -y curl
