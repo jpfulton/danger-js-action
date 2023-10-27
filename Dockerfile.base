@@ -9,11 +9,14 @@ LABEL "com.github.actions.description"="Runs JavaScript/TypeScript Dangerfiles w
 LABEL "com.github.actions.icon"="green-square"
 LABEL "com.github.actions.color"="green"
 
-# Install modern yarn
-RUN corepack enable && yarn set version 3.6.3
+# Update base image packages
+RUN apt-get update && apt-get upgrade -y
 
 # Install curl
-RUN apt-get update && apt-get install -y curl
+RUN apt-get install -y curl
+
+# Install modern yarn
+RUN corepack enable && yarn set version 3.6.3
 
 # Copy repo files to container and install dependencies
 WORKDIR /action/workspace
