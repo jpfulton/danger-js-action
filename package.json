@@ -4,6 +4,7 @@
   "devDependencies": {
     "@jpfulton/java-license-auditor-cli": "^0.0.10",
     "@jpfulton/node-license-auditor-cli": "^1.0.7",
+    "@jpfulton/python-license-auditor-cli": "^0.0.1",
     "@seadub/danger-plugin-eslint": "^3.0.2",
     "@typescript-eslint/eslint-plugin": "^6.8.0",
     "@typescript-eslint/parser": "^6.8.0",

@@ -829,6 +829,20 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@jpfulton/python-license-auditor-cli@npm:^0.0.1":
+  version: 0.0.1
+  resolution: "@jpfulton/python-license-auditor-cli@npm:0.0.1"
+  dependencies:
+    "@jpfulton/license-auditor-common": ^0.0.8
+    commander: ^11.0.0
+    node-fetch: ^2.0.0
+    node-html-parser: ^6.1.10
+  bin:
+    python-license-auditor-cli: dist/cjs/program.js
+  checksum: a196e836dc55cc58f65aed5b909608e13ddcd1d66113441f7eb601b91a6795a4f0472c9e7557b374d31d478b5ee1b023cf0043f1d26950cd919d91195a269cab
+  languageName: node
+  linkType: hard
+
 "@jridgewell/gen-mapping@npm:^0.3.0, @jridgewell/gen-mapping@npm:^0.3.2":
   version: 0.3.3
   resolution: "@jridgewell/gen-mapping@npm:0.3.3"
@@ -2072,6 +2086,7 @@ __metadata:
   dependencies:
     "@jpfulton/java-license-auditor-cli": ^0.0.10
     "@jpfulton/node-license-auditor-cli": ^1.0.7
+    "@jpfulton/python-license-auditor-cli": ^0.0.1
     "@seadub/danger-plugin-eslint": ^3.0.2
     "@typescript-eslint/eslint-plugin": ^6.8.0
     "@typescript-eslint/parser": ^6.8.0
